@@ -107,11 +107,16 @@ import matplotlib.pyplot as plt
 from collections import Counter
 
 
-def plot_wordcloud(vocabulary: Counter) -> None:
+def plot_wordcloud(vocabulary: Counter, title: str = "title") -> None:
     """
-    This function plots a word cloud based on the vocabulary.
-    Args:
-        vocabulary (Counter): A Counter object containing the vocabulary and count values of words.
+    This function generates a word cloud visualization from a given vocabulary.
+
+    Parameters:
+        vocabulary (Counter): A Counter object containing the vocabulary and their frequencies.
+        title (str, optional): The title of the word cloud. Defaults to 'title'.
+
+    Returns:
+        None: The function does not return any value. It displays the word cloud visualization.
     """
     wordcloud = WordCloud(
         width=800, height=400, background_color="white"
@@ -119,6 +124,7 @@ def plot_wordcloud(vocabulary: Counter) -> None:
     plt.figure(figsize=(10, 5))
     plt.imshow(wordcloud, interpolation="bilinear")
     plt.axis("off")
+    plt.title(title)
     plt.show()
 
 
