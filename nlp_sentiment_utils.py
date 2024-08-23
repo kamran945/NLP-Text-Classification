@@ -147,7 +147,7 @@ def get_eval_metrics(y_true: np.array, y_pred: np.array) -> dict:
         dict: A dictionary containing the accuracy, precision, recall, and F1 score.
     """
     # Calculate precision, recall, and F1 score
-    accuracy = accuracy_score(y_val, y_pred)
+    accuracy = accuracy_score(y_true, y_pred)
     precision = precision_score(y_true, y_pred)
     recall = recall_score(y_true, y_pred)
     f1 = f1_score(y_true, y_pred)
